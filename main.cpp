@@ -89,7 +89,7 @@ private:
 };
 
 int main() {
-    vector<string> msg {
+    const vector<string> msg {
         "hello", "this", "message", "is", "encrypted."
     };
 
