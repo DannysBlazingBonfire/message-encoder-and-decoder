@@ -20,7 +20,6 @@ public:
     for (size_t i{0}; i < strs.size(); i++) {
       current_str = strs[i];
       if (current_str.empty()) {
-        encoded_str.push_back({});
         encoded_str.push_back(split_char);
         continue;
       }
@@ -53,7 +52,7 @@ public:
     char decoded_char{};
 
     for (size_t _char{0}; _char < s.length(); _char++) {
-      if (s[_char] == '\0') {
+      if (!s[_char]) {
         continue;
       }
 
@@ -92,7 +91,8 @@ private:
 };
 
 int main() {
-  const vector<string> msg{"hello", "this", "message", "is", "encrypted."};
+  const vector<string> msg{"",     "a",  "",   "b",         "",        "c",
+                           "This", "is", "an", "encrypted", "message."};
 
   for (auto word : msg) {
     for (auto _char : word) {
